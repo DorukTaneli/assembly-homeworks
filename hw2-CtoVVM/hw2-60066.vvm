@@ -1,0 +1,39 @@
+LDA 69 //get B[N-1-n]
+STO 90 //store at 90
+BRP 05 //branch to positive
+//Negative (make it positive)
+LDA 98 //load 0
+SUB 90 //zero
+//Positive
+STO 70 //set to A[0]
+LDA 00 //get N-1-n
+SUB 97 //decrement
+STO 00 //store it back
+LDA 05 //get B[n]
+ADD 97 //increment
+STO 05 //store it back
+LDA 96 //get B start
+ADD 97 //increment
+STO 96 //store it back
+SUB 94 //-79
+BRZ 18 //halt if zero
+BR 00
+HLT
+*60
+DAT -001
+DAT 003
+DAT -005
+DAT -002
+DAT 004
+DAT -006
+DAT 005
+DAT -003
+DAT 001
+DAT -009
+*94
+DAT 080 //B end   94
+DAT 060 //A start 95
+DAT 070 //B start 96
+DAT 001 //One     97
+DAT 000 //Zero    98
+DAT 069 //60+N-1-n   99
