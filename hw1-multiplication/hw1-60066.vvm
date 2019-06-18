@@ -1,0 +1,29 @@
+nop
+in //input B
+sto 98 //B at 98
+in //input A
+sto 99 //A at 99
+brp 14 //branch to positive case
+//negative A loop
+brz 22 //jump out of the loop
+lda 97 //load C
+sub 98 //sub B from C
+sto 97 //store C
+lda 99 //load A
+add 25 //increment A
+sto 99 //store A
+br 06 //jump to negative loop start
+//positive A loop
+brz 22 //jump out of the loop
+lda 97 //load C
+add 98 //add B to C
+sto 97 //store C
+lda 99 //load A
+sub 25 //decrement A
+sto 99 //store A
+br 14 //jump to positive loop start
+//out of loop
+lda 97 //load C
+out //print result
+hlt //Done
+dat 001
